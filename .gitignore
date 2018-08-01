@@ -1,3 +1,6 @@
+.idea
+# Below is the default .gitignore of GitHub for node projects
+
 # Logs
 logs
 *.log
