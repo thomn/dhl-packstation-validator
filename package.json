@@ -1,6 +1,6 @@
 {
   "name": "dhl-packstation-validator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A package for validating DHL Packstation addresses",
   "main": "index.js",
   "scripts": {
