@@ -16,7 +16,7 @@
     "postnummer",
     "validator"
   ],
-  "author": "David Beuchert <david.beuchert@thomann.de>",
+  "author": "David Beuchert <david@thomann.io>",
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/filecage/dhl-packstation-validator/issues"
