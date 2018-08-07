@@ -4,7 +4,7 @@
   "description": "A package for validating DHL Packstation addresses",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/filecage/dhl-packstation-validator#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "mocha": "^5.2.0"
   }
 }
