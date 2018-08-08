@@ -1,8 +1,8 @@
 {
   "name": "dhl-packstation-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A package for validating DHL Packstation addresses",
-  "main": "index.js",
+  "main": "./src/Postnummer.js",
   "scripts": {
     "test": "mocha --require babel-core/register"
   },
