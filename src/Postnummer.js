@@ -4,11 +4,10 @@ export default class Postnummer {
      * @returns {boolean}
      */
     static isValid(postnummer) {
+        postnummer = parseInt(postnummer).toString(); // to normalize input value
         if (postnummer.match(/^\d{6,10}$/) === null) {
             return false;
         }
-
-        postnummer = parseInt(postnummer).toString(); // to normalize input value
         postnummer = postnummer.padStart(10, '0');
 
         return postnummer.substring(postnummer.length - 1) === Postnummer.getCheckDigitFromPostnummer(postnummer).toString();
