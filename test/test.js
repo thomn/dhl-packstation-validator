@@ -5,6 +5,7 @@ describe('Postnummer', function() {
   describe('Validator', function() {
     it('should reject the given invalid Postnummer', function() {
         assert.equal(Postnummer.isValid(''), false);
+        assert.equal(Postnummer.isValid(1), false);
         assert.equal(Postnummer.isValid('1'), false);
         assert.equal(Postnummer.isValid('12'), false);
         assert.equal(Postnummer.isValid('123'), false);
@@ -17,6 +18,7 @@ describe('Postnummer', function() {
     });
 
     it('should accept the given valid Postnummer', function() {
+        assert.equal(Postnummer.isValid(12345678), true);
         assert.equal(Postnummer.isValid('12345678'), true);
         assert.equal(Postnummer.isValid('1234567890'), true);
         assert.equal(Postnummer.isValid('2486527'), true);
@@ -26,6 +28,9 @@ describe('Postnummer', function() {
         assert.equal(Postnummer.isValid('47960455'), true);
         assert.equal(Postnummer.isValid('846460777'), true);
         assert.equal(Postnummer.isValid('902867372'), true);
+        assert.equal(Postnummer.isValid('0902867372'), true);
+        assert.equal(Postnummer.isValid('00902867372'), true);
+        assert.equal(Postnummer.isValid(902867372), true);
     });
   });
 });
