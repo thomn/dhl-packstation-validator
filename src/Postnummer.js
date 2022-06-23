@@ -4,13 +4,21 @@ export default class Postnummer {
      * @returns {boolean}
      */
     static isValid(postnummer) {
-        postnummer = parseInt(postnummer).toString(); // to normalize input value
-        if (postnummer.match(/^\d{6,10}$/) === null) {
+        postnummer = postnummer.trim();
+        let parsedNumber = parseInt(postnummer).toString(); // to normalize input value
+
+        // parseInt filters out special chars, when string is given
+        // So check, if string is longer than parsedNumber
+        if (postnummer.length !== parsedNumber.toString().length) {
             return false;
         }
-        postnummer = postnummer.padStart(10, '0');
 
-        return postnummer.substring(postnummer.length - 1) === Postnummer.getCheckDigitFromPostnummer(postnummer).toString();
+        if (parsedNumber.match(/^\d{6,10}$/) === null) {
+            return false;
+        }
+        parsedNumber = parsedNumber.padStart(10, '0');
+
+        return parsedNumber.substring(parsedNumber.length - 1) === Postnummer.getCheckDigitFromPostnummer(parsedNumber).toString();
     }
 
     /**
