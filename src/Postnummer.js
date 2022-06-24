@@ -3,7 +3,11 @@ export default class Postnummer {
      * @param {string|int} postnummer
      * @returns {boolean}
      */
-    static isValid(postnummer) {
+    static isValid (postnummer) {
+        if (isNaN(postnummer)) {
+            return false;
+        }
+
         postnummer = parseInt(postnummer).toString(); // to normalize input value
         if (postnummer.match(/^\d{6,10}$/) === null) {
             return false;

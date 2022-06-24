@@ -15,6 +15,10 @@ describe('Postnummer', function() {
         assert.equal(Postnummer.isValid('1234567'), false);
         assert.equal(Postnummer.isValid('123456789'), false);
         assert.equal(Postnummer.isValid('12345678901'), false);
+        assert.equal(Postnummer.isValid('12345678^'), false);
+        assert.equal(Postnummer.isValid('12345678!'), false);
+        assert.equal(Postnummer.isValid('12345678?'), false);
+        assert.equal(Postnummer.isValid('12345678_'), false);
     });
 
     it('should accept the given valid Postnummer', function() {
